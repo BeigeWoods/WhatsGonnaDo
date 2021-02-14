@@ -1,0 +1,58 @@
+ul{
+    display: none; /*JS 작업용*/
+    text-align: left;
+    width: max-content;
+    margin: auto;
+    padding: 15px 0px 15px 15px;
+    background-color: rgba(0, 0, 0, 0.600);
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: -4px 0 5px rgba(27, 27, 27, 0.400), 0 4px 5px rgba(27, 27, 27, 0.400),
+    4px 0 5px rgba(27, 27, 27, 0.400), 0 -4px 5px rgba(27, 27, 27, 0.400);
+}
+
+li{
+    padding: 5px 0;
+    list-style: none;
+    animation: fadeIn 0.5s linear;
+}
+
+.checkLi{
+    color: rgb(177, 177, 177);
+    text-decoration: line-through;
+    text-shadow: none;
+}
+
+button {
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    padding: 0 6px 0 0;
+    padding-right: 6px;
+}
+
+.checkBtn{
+    color: rgb(0, 143, 0);
+    font-size: 17px;
+    padding-right: 15px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.modiBtn{
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    text-align: right;
+    width: 20px;
+    left: -20px;
+    opacity: 0;
+}
+
+
+.modiBtn:hover{
+    animation: slideToRight 1s ease 0s forwards;
+}
+
+.modiBtn:not(:hover){
+    animation: slideToLeft 0.5s ease;
+}

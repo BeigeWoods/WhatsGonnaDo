@@ -1,0 +1,59 @@
+input{
+    font-size: 20px;
+    font-family: 'Cafe24Oneprettynight';
+    color: white;
+    caret-color: white; /*커서 색상 바꾸기*/
+    text-align : center;
+    outline: 0;
+    border-width: 0;
+    background-color : Transparent;
+    text-shadow: 2px 2px 2px #000;
+}
+
+input::placeholder {
+    font-family: 'Script MT';
+    color: rgba(255, 255, 255, 0.774);
+}
+.nameInput{
+    border-width: 0 0 4px; /*네 면 테두리의 너비를 설정*/
+    border-color: rgb(10, 90, 110);
+    padding: 5px 40px;
+    font-size: 35px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.nameInput::placeholder {
+    color: rgba(255, 255, 255, 0.842);
+    font-size: 30px;
+}
+
+.toDoInput{
+    width: 260px;
+}
+
+.toDoInput::placeholder {
+    font-size: 25px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    background: url(file:///C:/Users/IVI_Home/Desktop/Code/whatToDo/icons/clock.svg) no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.deleteContent{
+    margin-top: 3px;
+}
+
+.toDoInputGrid{
+    display: grid;
+    align-items: center;
+    justify-content:center;
+    grid-template-columns: 32px 140px 266px 20px;
+    grid-template-rows: 30px;
+    border-style: none none solid none ;
+    border-width: 3.5px;
+    border-color: rgb(10, 90, 110);
+}

@@ -1,0 +1,53 @@
+.WDBody {
+    display: grid;
+    align-items: center;
+    justify-content:center;
+    grid-template-columns: auto auto;
+    grid-template-rows: 35px auto;
+    color: rgb(253, 242, 255);
+    font-family: 'Ink Free';
+    font-size: 21px;
+    position: absolute;
+    left: 20px; 
+    top: 15px; 
+}
+
+.date{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#wIcons {
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.audioCont{
+    font-family: 'Ink Free';
+    color: rgb(253, 242, 255);
+    display: grid;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    align-items: center;
+    justify-content:center;
+    grid-template-columns: auto 136px;
+    grid-template-rows: 50px;
+}
+
+.musicTitle{
+    padding-right: 15px;
+}
+
+.audioBox{
+    padding: 2px 5px 0;
+    display: grid;
+    grid-template-columns: 42px 42px 42px;
+    grid-template-rows: 45px;
+    background-color: rgba(253, 242, 255, 0.692);
+    border-radius: 30px 30px 30px 30px;
+}
+
+.controller, .forward, .replay{
+    padding: 0;
+}
