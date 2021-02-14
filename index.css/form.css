@@ -37,10 +37,7 @@ input::placeholder {
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator{
-    cursor: pointer;
-    background: url(file:///C:/Users/IVI_Home/Desktop/Code/whatToDo/icons/clock.svg) no-repeat;
-    width: 20px;
-    height: 20px;
+    filter: invert(35%) sepia(70%) hue-rotate(150deg) contrast(200%);
 }
 
 .deleteContent{
