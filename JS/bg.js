@@ -14,15 +14,13 @@ function paintImage(imgNumber){
   body.prepend(image);
 }
 
-function removeImageEl(){
-  const Bg = document.querySelector(".bgImage");
-  Bg.remove();
-}
-
 function changeBg(){
-  removeImageEl();
-  const randomNumber = imgFileRandom();
-  paintImage(randomNumber);
+  const Bg = document.querySelector(".bgImage");
+  Bg.animate([
+    { opacity: 0},
+    { opacity: 1}],
+    { duration: 500 });
+  Bg.src = `images/${imgFileRandom() + 1}.jpg`;
 }
 
 function init(){
