@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+.bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
+}
+
+.setting{
+  visibility: visible;
+  cursor: pointer;
+  position: fixed;
+  bottom: 12px;
+  right: 18px;
+}
+
+.configuration {
+  visibility: hidden;
+  display: grid;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  grid-template-columns: 67px 70px 66px 67px;
+  grid-template-rows: 100px;
+  border-radius: 30px;
+}
+
+.configuration button {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+
+.configuration__tooltip {
+  visibility: hidden;
+  margin: 10px 0px;
+  font-family: 'Nanum Pen Script';
+  font-size: 20px;
+  color: rgb(253, 242, 255);
+  text-shadow: 2px 2px 2px #000;
+  text-align: center;
+  padding: 3px 6px;
+  background-color: rgba(0, 0, 0, 0.600);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: -4px 0 5px rgba(27, 27, 27, 0.400), 0 4px 5px rgba(27, 27, 27, 0.400),
+  4px 0 5px rgba(27, 27, 27, 0.400), 0 -4px 5px rgba(27, 27, 27, 0.400);
+}
+
+.configuration button:hover span {
+  visibility: visible;
+}
+
+.setTimeInterval {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+.setTimeInterval__box {
+  z-index: 1;
+  width: 220px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: grid;
+  align-items: center;
+  justify-content:center;
+  grid-template-columns: 72px 72px 72px;
+  grid-template-rows: 90px 35px;
+  background-color: rgb(13, 107, 131);
+  border: 12px solid rgb(13, 107, 131);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.87);
+}
+
+.setTimeInterval__box-info{
+  cursor: pointer;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.setTimeInterval__box-time {
+  padding: 0px;
+  font-size: 20px;
+  font-family: 'Cafe24Oneprettynight';
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.clicked {
+  color: rgb(168, 168, 168);
+}
+
+.showingCf{
+  animation: fadeIn 0.7s linear;
+  visibility: visible;
+}
+
+.unshowingCf{
+  animation: fadeOut 0.7s linear;
+  visibility: hidden;
+}
