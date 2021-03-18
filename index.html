@@ -3,118 +3,121 @@
 <head>
     <title>What will you do today?</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="index.css/index.css"/>
-    <link rel="stylesheet" href="index.css/todo.css"/>
-    <link rel="stylesheet" href="index.css/weather&date&audio.css"/>
-    <link rel="stylesheet" href="index.css/clock&greeting.css"/>
-    <link rel="stylesheet" href="index.css/form.css"/>
-    <link rel="stylesheet" href="index.css/bg&configuration.css"/>
-    <link rel="stylesheet" href="index.css/alarm.css"/>
+    <link rel="stylesheet" href="CSS/style.css"/>
     <!--weather icons: 'https://cdnjs.com/libraries/weather-icons'-->
     <link rel="stylesheet" type="text/css" 
     href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
 </head>
-<body>
-    <div class= "closeConfigAll"></div>
-    <div class="WDBody">
-        <div class="js-date date"></div>
-        <i id="wIcons"></i>
-        <span class="js-weather weather"></span>
+<body> 
+  <div class="forCloseSetting"></div>
+
+  <aside class="today">
+    <span class="today__date"></span>
+    <i id="weatherIcon"></i>
+    <span class="today__weather"></span>
+  </aside>
+  
+  <aside class="music">
+    <span class="music__title"></span>
+    <div class="music__audio">
+      <audio></audio>
+      <button class="music__audio-replay">
+        <img class="replayIcon"/>
+      </button>
+      <button class="music__audio-controller">
+        <img class="controllIcon"/>
+      </button>
+      <button class="music__audio-forward">
+        <img src="icons/forward.png"/>
+      </button>
     </div>
-    <div class="askNameBody">
-        <div class="js-clock">
-            <h1 class="clock">00:00</h1>
-        </div>
-        <form class="js-nameForm">
-            <input class="nameInput" type="text" placeholder="What is your name?"/>
+  </aside>
+
+  <section class="askName">
+    <time class="askName__clock">
+      <h1>00:00</h1>
+    </time>
+    <form class="askName__form">
+      <input class="askName__input" placeholder="What is your name?"/>
+    </form>
+  </section>
+
+  <section class="toDo">
+    <article class="toDoHeader">
+      <time class="toDoHeader__clock">
+        <h1>00:00</h1>
+      </time>
+      <h4 id ="Hi" class="toDoHeader__greetings"></h4>
+      <main class="toDoHeader__formBar">
+        <button class="toDoHeader__formBar-deleteContent" onclick="deleteContent()">
+          <i class="fas fa-minus-square"></i>
+        </button>
+        <form class="toDoHeader__formBar-timeForm">
+          <input type="time" onchange="handleTimeSubmit(event);">
         </form>
-    </div>
-    <div class="toDoBody">
-        <div class="toDoGrid">
-            <div class="js-clockB">
-                <h1 class="clockB">00:00</h1>
-            </div>
-            <h4 id ="Hi" class="js-greetings greetings"></h4>
-            <div class="toDoInputGrid">
-                <button class="deleteContent" onclick="deleteContent()">
-                    <img src="icons/deleteContent.png"/>
-                </button>
-                <form class="js-timeForm">
-                    <input class="timeInput" type="time" onchange="handleTimeSubmit(event);">
-                </form>
-                <form class="js-toDoForm">
-                    <input class="toDoInput" type="text" placeholder="Write a to do"/>
-                </form>
-                <button class="deleteInput" onclick="deleteInput()">
-                    <img src="icons/deleteInput.png"/>
-                </button>
-            </div>
-        </div>
-        <ul class="js-toDoList"></ul>
-    </div>
-    <div class="STGContainer">
-        <div class="setTimeGrid">
-            <p class="info" onclick="closeTimeConfig()">
-                알람은 정각을 포함하여<br>최대 3회 반복합니다<br>시간 간격을 정해주세요</p>
-            <button class="time" value="5">5분</button>
-            <button class="time" value="10">10분</button>
-            <button class="time" value="15">15분</button>
-        </div>
-    </div>
-    <div class="audioCont">
-        <span class="musicTitle"></span>
-        <div class="audioBox">
-            <audio class="audio">
-            </audio>
-            <button class="replay">
-                <img class="replayIcon"/>
-            </button>
-            <button class="controller">
-                <img class="controllIcon"/>
-            </button>
-            <button class="forward">
-                <img src="icons/forward.png"/>
-            </button>
-        </div>
-    </div>
-    <div class="setting">
-        <button class="settingBtn" onclick="showConfig()">
-            <img src="icons/settingBtn.png"/>
+        <form class="toDoHeader__formBar-textForm">
+          <input placeholder="Write a to do"/>
+        </form>
+        <button class="toDoHeader__formBar-deleteInput" onclick="deleteInput()">
+          <i class="fas fa-times fa-lg"></i>
         </button>
-    </div>
-    <div class="configurationBody">
-        <button class="deleteAll" onclick="deleteAllData()">
-            <p class="tooltipDt">초기화</p>
-            <img src="icons/trash.png"/>
-        </button>
-        <button class="changeBg" onclick="changeBg()">
-            <p class="tooltipBg">다른 배경</p>
-            <img src="icons/photo.png"/>
-        </button>
-        <button class="switchBell">
-            <p class="tooltipSB">알람벨</p>
-            <img class="bellIcon"/>
-        </button>
-        <button class="timeConfig" onclick="timeConfig()">
-            <p class="tooltipST">시간 설정</p>
-            <img src="icons/setTimeGap.png"/>
-        </button>
-    </div>
-    <div class="alarmCont">
-        <div class="alarmGrid">
-            <div class="alarmTime"></div>
-            <div class="alarmText"></div>
-        </div>
-        <audio class="ringBell"></audio>
-    </div>
-    <script src="index.js/alarm.js"></script>
-    <script src="index.js/audio.js"></script>
-    <script src="index.js/clock&date.js"></script>
-    <script src="index.js/greeting.js"></script>
-    <script src="index.js/todo.js"></script>
-    <script src="index.js/bg.js"></script>
-    <script src="index.js/weather.js"></script>
-    <script src="index.js/delData&configuration.js"></script>
+      </main>
+    </article>
+    <ul class="toDoList"></ul>
+  </section>
+
+  <aside class="setting">
+    <button onclick="showConfig()">
+      <img src="icons/settingBtn.png"/>
+    </button>
+  </aside>
+
+  <aside class="configuration">
+    <button class="configuration__deleteAll" onclick="deleteAllData()">
+      <span class="configuration__tooltip">초기화</span>
+      <img src="icons/trash.png"/>
+    </button>
+    <button class="configuration__changeBg" onclick="changeBg()">
+      <span class="configuration__tooltip">다른 배경</span>
+      <img src="icons/photo.png"/>
+    </button>
+    <button class="configuration__switchBell">
+      <span class="configuration__tooltip">알람벨</span>
+      <img class="bellIcon"/>
+    </button>
+    <button class="configuration__timeConfig" onclick="timeConfig()">
+      <span class="configuration__tooltip">시간 설정</span>
+      <img src="icons/setTimeGap.png"/>
+    </button>
+  </aside>
+
+  <aside class="setTimeInterval">
+    <main class="setTimeInterval__box">
+      <p class="setTimeInterval__box-info" onclick="closeTimeConfig()">
+        알람은 정각을 포함하여<br>최대 3회 반복합니다<br>시간 간격을 정해주세요</p>
+      <button class="setTimeInterval__box-time" value="5">5분</button>
+      <button class="setTimeInterval__box-time" value="10">10분</button>
+      <button class="setTimeInterval__box-time" value="15">15분</button>
+    </main>
+  </aside>
+
+  <aside class="alarm">
+    <main class="alarm__box">
+      <time class="alarm__box-time"></time>
+      <span class="alarm__box-text"></span>
+    </main>
+    <audio class="alarm__ringBell"></audio>
+  </aside>
+
+  <script src="JS/alarm.js"></script>
+  <script src="JS/audio.js"></script>
+  <script src="JS/clock&date.js"></script>
+  <script src="JS/greeting.js"></script>
+  <script src="JS/todo.js"></script>
+  <script src="JS/bg.js"></script>
+  <script src="JS/weather.js"></script>
+  <script src="JS/delData&configuration.js"></script>
+  <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 </body>
 </html>
